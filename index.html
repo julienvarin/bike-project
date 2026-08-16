@@ -124,6 +124,10 @@
   .opt .badge{position:absolute;top:8px;right:8px;font-family:"Space Mono",monospace;font-size:10px;letter-spacing:.08em;
     background:var(--blue);color:#fff;padding:3px 8px;border-radius:100px}
 
+  a.opt{color:inherit;text-decoration:none;display:block;cursor:pointer}
+  a.opt:hover .oc b{text-decoration:underline}
+  .cap .caphint{color:var(--blue);text-transform:none;letter-spacing:.02em}
+
   /* ---- recipes ---- */
   .tabs{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap}
   .tab{font-family:"Space Mono",monospace;font-size:13px;letter-spacing:.02em;cursor:pointer;
@@ -236,7 +240,7 @@
 
   <!-- PARTS -->
   <section id="parts">
-    <div class="sec-head"><span class="n">01–10</span><h2>The parts, one by one</h2></div>
+    <div class="sec-head"><span class="n">01–11</span><h2>The parts, one by one</h2></div>
     <p class="sec-sub">Green label = keep &amp; refresh what you have. Amber label = the upgrade worth making. Each part shows a main pick plus the <b>options</b> you can choose between. Prices are rough EU street prices for planning, not quotes.</p>
 
     <!-- 00 frame -->
@@ -253,10 +257,10 @@
       </div>
       <figure class="shot"><img src="images/frame.svg" alt="Side view of a steel diamond frame with chrome finish" loading="lazy" width="480" height="360"></figure>
       <div class="opts">
-        <div class="cap">Options — pick one</div>
+        <div class="cap">Options — pick one <span class="caphint">— tap to compare &amp; shop ↗</span></div>
         <div class="optgrid two">
-          <div class="opt rec"><span class="badge">Pick</span><img src="images/opt_frame_a.svg" alt="Clear-coated raw steel frame" loading="lazy"><div class="oc"><b>Clear-coat raw</b><span>keeps bare-steel look · ≈ €60–90</span></div></div>
-          <div class="opt"><img src="images/opt_frame_b.svg" alt="Single-colour powdercoat frame" loading="lazy"><div class="oc"><b>One colour</b><span>single powder coat · ≈ €90–120</span></div></div>
+          <a class="opt rec" href="https://www.google.com/search?q=bicycle+frame+clear+coat+raw+steel" target="_blank" rel="noopener"><span class="badge">Pick</span><img src="images/opt_frame_a.svg" alt="Clear-coated raw steel frame" loading="lazy"><div class="oc"><b>Clear-coat raw</b><span>keeps bare-steel look · ≈ €60–90</span></div></a>
+          <a class="opt" href="https://www.google.com/search?q=bicycle+frame+powder+coat+single+colour" target="_blank" rel="noopener"><img src="images/opt_frame_b.svg" alt="Single-colour powdercoat frame" loading="lazy"><div class="oc"><b>One colour</b><span>single powder coat · ≈ €90–120</span></div></a>
         </div>
       </div>
     </article>
@@ -274,11 +278,11 @@
       </div>
       <figure class="shot"><img src="images/handlebar.svg" alt="Chrome swept-back riser handlebar with blue grips" loading="lazy" width="480" height="360"></figure>
       <div class="opts">
-        <div class="cap">Options — how much sweep?</div>
+        <div class="cap">Options — how much sweep? <span class="caphint">— tap to compare &amp; shop ↗</span></div>
         <div class="optgrid">
-          <div class="opt rec"><span class="badge">Pick</span><img src="images/opt_bar_a.svg" alt="Chrome riser with mild sweep" loading="lazy"><div class="oc"><b>Mild sweep</b><span>subtle rise + backsweep</span></div></div>
-          <div class="opt"><img src="images/opt_bar_b.svg" alt="Chrome riser with more sweep" loading="lazy"><div class="oc"><b>More swept</b><span>hands rotate back further</span></div></div>
-          <div class="opt"><img src="images/opt_bar_c.svg" alt="Chrome promenade bar" loading="lazy"><div class="oc"><b>Promenade</b><span>full upright cruiser</span></div></div>
+          <a class="opt rec" href="https://www.google.com/search?q=chrome+riser+handlebar+swept+back+city" target="_blank" rel="noopener"><span class="badge">Pick</span><img src="images/opt_bar_a.svg" alt="Chrome riser with mild sweep" loading="lazy"><div class="oc"><b>Mild sweep</b><span>subtle rise + backsweep</span></div></a>
+          <a class="opt" href="https://www.google.com/search?q=swept+back+city+handlebar+chrome" target="_blank" rel="noopener"><img src="images/opt_bar_b.svg" alt="Chrome riser with more sweep" loading="lazy"><div class="oc"><b>More swept</b><span>hands rotate back further</span></div></a>
+          <a class="opt" href="https://www.google.com/search?q=promenade+cruiser+handlebar+chrome" target="_blank" rel="noopener"><img src="images/opt_bar_c.svg" alt="Chrome promenade bar" loading="lazy"><div class="oc"><b>Promenade</b><span>full upright cruiser</span></div></a>
         </div>
       </div>
     </article>
@@ -296,20 +300,41 @@
       </div>
       <figure class="shot"><img src="images/stem.svg" alt="A chrome quill stem" loading="lazy" width="480" height="360"></figure>
       <div class="opts">
-        <div class="cap">Options — how tall?</div>
+        <div class="cap">Options — how tall? <span class="caphint">— tap to compare &amp; shop ↗</span></div>
         <div class="optgrid two">
-          <div class="opt rec"><span class="badge">Pick</span><img src="images/opt_stem_a.svg" alt="Tall chrome quill stem" loading="lazy"><div class="oc"><b>Technomic tall</b><span>more upright · easy height</span></div></div>
-          <div class="opt"><img src="images/opt_stem_b.svg" alt="Standard chrome quill stem" loading="lazy"><div class="oc"><b>Technomic standard</b><span>lower, sportier reach</span></div></div>
+          <a class="opt rec" href="https://www.google.com/search?q=Nitto+Technomic+quill+stem+tall+silver" target="_blank" rel="noopener"><span class="badge">Pick</span><img src="images/opt_stem_a.svg" alt="Tall chrome quill stem" loading="lazy"><div class="oc"><b>Technomic tall</b><span>more upright · easy height</span></div></a>
+          <a class="opt" href="https://www.google.com/search?q=Nitto+Technomic+quill+stem+silver" target="_blank" rel="noopener"><img src="images/opt_stem_b.svg" alt="Standard chrome quill stem" loading="lazy"><div class="oc"><b>Technomic standard</b><span>lower, sportier reach</span></div></a>
         </div>
       </div>
     </article>
 
-    <!-- 03 grips -->
+    <!-- 03 headset -->
+    <article class="entry keep">
+      <div>
+        <div class="head">
+          <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><line x1="20" y1="7" x2="20" y2="33"/><ellipse cx="20" cy="16" rx="10" ry="3"/><ellipse cx="20" cy="24" rx="10" ry="3"/><rect x="14" y="9" width="12" height="4" rx="1"/></svg>
+          <h3>Headset</h3><span class="num">03</span>
+        </div>
+        <p>The hidden bearing that lets the fork steer. Yours is an old <b>1″ threaded headset</b> — that’s the whole reason the stem is a quill. If it turns smoothly, leave it. If it feels notchy or gritty (worn bearings), replace it — but <b>keep the 1″ threaded type</b> so the quill stem still fits.</p>
+        <span class="role">Keep · replace only if notchy</span>
+        <div class="spec"><span class="k">keep type:</span> <span class="v">1″ threaded (JIS, 25.4 mm)</span><br><span class="k">pick:</span> <span class="v">Tange Seiki Passage — the reliable classic</span><br><span class="k">verify:</span> <span class="flag">1″ not 1⅛″ — measure the steerer</span> · <span class="k">cost:</span> <span class="v">≈ €30–60</span></div>
+      </div>
+      <figure class="shot"><img src="images/headset.svg" alt="A one-inch threaded bicycle headset on the fork steerer" loading="lazy" width="480" height="360"></figure>
+      <div class="opts">
+        <div class="cap">Options — pick one <span class="caphint">— tap to compare &amp; shop ↗</span></div>
+        <div class="optgrid two">
+          <a class="opt rec" href="https://www.google.com/search?q=1+inch+threaded+bicycle+headset+Tange+Seiki" target="_blank" rel="noopener"><span class="badge">Pick</span><img src="images/opt_headset_a.svg" alt="One-inch threaded headset" loading="lazy"><div class="oc"><b>1″ threaded</b><span>keeps the quill · simplest</span></div></a>
+          <a class="opt" href="https://www.google.com/search?q=1+inch+threadless+headset+conversion" target="_blank" rel="noopener"><img src="images/opt_headset_b.svg" alt="One-inch threadless headset conversion" loading="lazy"><div class="oc"><b>Threadless</b><span>needs a threadless stem too</span></div></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 04 grips -->
     <article class="entry">
       <div>
         <div class="head">
           <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="16" width="26" height="8" rx="4"/><path d="M13 16 L13 24 M19 16 L19 24 M25 16 L25 24"/></svg>
-          <h3>Grips</h3><span class="num">03</span>
+          <h3>Grips</h3><span class="num">04</span>
         </div>
         <p>The cheapest big decision, and <b>the first place the electric blue lands</b>. Grips are one of the three spots the pop colour repeats (grips · cables · bolts), so a bright lock-on grip here sets the whole tone.</p>
         <span class="role">Upgrade · first hit of the pop</span>
@@ -317,11 +342,11 @@
       </div>
       <figure class="shot"><img src="images/grips.svg" alt="Handlebar grips, cork and electric blue" loading="lazy" width="480" height="360"></figure>
       <div class="opts">
-        <div class="cap">Options — pick one</div>
+        <div class="cap">Options — pick one <span class="caphint">— tap to compare &amp; shop ↗</span></div>
         <div class="optgrid">
-          <div class="opt rec"><span class="badge">Pick</span><img src="images/opt_grip_c.svg" alt="Electric-blue grips" loading="lazy"><div class="oc"><b>Electric-blue</b><span>repeats the pop colour</span></div></div>
-          <div class="opt"><img src="images/opt_grip_a.svg" alt="Cork grips" loading="lazy"><div class="oc"><b>Cork / tan</b><span>warm &amp; neutral</span></div></div>
-          <div class="opt"><img src="images/opt_grip_b.svg" alt="Black grips" loading="lazy"><div class="oc"><b>Black leather</b><span>lets cables carry the blue</span></div></div>
+          <a class="opt rec" href="https://www.google.com/search?q=electric+blue+lock-on+bicycle+grips" target="_blank" rel="noopener"><span class="badge">Pick</span><img src="images/opt_grip_c.svg" alt="Electric-blue grips" loading="lazy"><div class="oc"><b>Electric-blue</b><span>repeats the pop colour</span></div></a>
+          <a class="opt" href="https://www.google.com/search?q=cork+bicycle+grips" target="_blank" rel="noopener"><img src="images/opt_grip_a.svg" alt="Cork grips" loading="lazy"><div class="oc"><b>Cork / tan</b><span>warm &amp; neutral</span></div></a>
+          <a class="opt" href="https://www.google.com/search?q=black+leather+bicycle+grips" target="_blank" rel="noopener"><img src="images/opt_grip_b.svg" alt="Black grips" loading="lazy"><div class="oc"><b>Black leather</b><span>lets cables carry the blue</span></div></a>
         </div>
       </div>
     </article>
@@ -331,7 +356,7 @@
       <div>
         <div class="head">
           <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 18 C14 14 30 14 33 20 C34 24 26 24 20 22 C13 20 9 24 7 18 Z"/><path d="M20 22 L20 32"/></svg>
-          <h3>Saddle</h3><span class="num">04</span>
+          <h3>Saddle</h3><span class="num">05</span>
         </div>
         <p>Not a leather Brooks — an <b>all-weather Brooks Cambium C17</b>. It’s a vulcanised natural-rubber top with an organic-cotton cover: the Brooks look and comfort, but <b>waterproof, maintenance-free, and ready to ride with no break-in</b>. Perfect for a bike left outside and ridden in the rain.</p>
         <span class="role">Upgrade · the all-weather icon</span>
@@ -339,11 +364,11 @@
       </div>
       <figure class="shot"><img src="images/saddle.svg" alt="A Brooks Cambium C17 all-weather saddle" loading="lazy" width="480" height="360"></figure>
       <div class="opts">
-        <div class="cap">Options — C17 colourway</div>
+        <div class="cap">Options — C17 colourway <span class="caphint">— tap to compare &amp; shop ↗</span></div>
         <div class="optgrid">
-          <div class="opt rec"><span class="badge">Pick</span><img src="images/opt_saddle_a.svg" alt="Brooks Cambium C17 in slate" loading="lazy"><div class="oc"><b>C17 slate</b><span>grey — quiet, hides dirt</span></div></div>
-          <div class="opt"><img src="images/opt_saddle_b.svg" alt="Brooks Cambium C17 in black" loading="lazy"><div class="oc"><b>C17 black</b><span>most discreet</span></div></div>
-          <div class="opt"><img src="images/opt_saddle_c.svg" alt="Brooks Cambium C17 in natural rubber" loading="lazy"><div class="oc"><b>C17 natural</b><span>warm tan rubber</span></div></div>
+          <a class="opt rec" href="https://www.google.com/search?q=Brooks+Cambium+C17+slate+saddle" target="_blank" rel="noopener"><span class="badge">Pick</span><img src="images/opt_saddle_a.svg" alt="Brooks Cambium C17 in slate" loading="lazy"><div class="oc"><b>C17 slate</b><span>grey — quiet, hides dirt</span></div></a>
+          <a class="opt" href="https://www.google.com/search?q=Brooks+Cambium+C17+black+saddle" target="_blank" rel="noopener"><img src="images/opt_saddle_b.svg" alt="Brooks Cambium C17 in black" loading="lazy"><div class="oc"><b>C17 black</b><span>most discreet</span></div></a>
+          <a class="opt" href="https://www.google.com/search?q=Brooks+Cambium+C17+natural+saddle" target="_blank" rel="noopener"><img src="images/opt_saddle_c.svg" alt="Brooks Cambium C17 in natural rubber" loading="lazy"><div class="oc"><b>C17 natural</b><span>warm tan rubber</span></div></a>
         </div>
       </div>
     </article>
@@ -353,7 +378,7 @@
       <div>
         <div class="head">
           <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><circle cx="20" cy="20" r="13"/><circle cx="20" cy="20" r="5"/><path d="M20 7 L20 12 M20 28 L20 33 M7 20 L12 20 M28 20 L33 20"/></svg>
-          <h3>Tires</h3><span class="num">05</span>
+          <h3>Tires</h3><span class="num">06</span>
         </div>
         <p>The single biggest visual transformation. Swapping knobbies for <b>Maxxis urban slicks</b> reads “intentional build” from across the street — fat, smooth, fast-rolling rubber on the chrome rims. Run them with standard tubes.</p>
         <span class="role">Upgrade · highest impact per euro</span>
@@ -361,11 +386,11 @@
       </div>
       <figure class="shot"><img src="images/tires.svg" alt="A Maxxis urban slick tire on a chrome rim" loading="lazy" width="480" height="360"></figure>
       <div class="opts">
-        <div class="cap">Options — Maxxis tread</div>
+        <div class="cap">Options — Maxxis tread <span class="caphint">— tap to compare &amp; shop ↗</span></div>
         <div class="optgrid">
-          <div class="opt rec"><span class="badge">Pick</span><img src="images/opt_tire_a.svg" alt="Maxxis Hookworm slick" loading="lazy"><div class="oc"><b>Hookworm</b><span>2.5″ fat slick · cruiser</span></div></div>
-          <div class="opt"><img src="images/opt_tire_b.svg" alt="Maxxis DTH semi-slick" loading="lazy"><div class="oc"><b>DTH</b><span>2.3″ slick · lively</span></div></div>
-          <div class="opt"><img src="images/opt_tire_c.svg" alt="Maxxis Holy Roller block tread" loading="lazy"><div class="oc"><b>Holy Roller</b><span>light block · a little grip</span></div></div>
+          <a class="opt rec" href="https://www.google.com/search?q=Maxxis+Hookworm+26+inch+tire" target="_blank" rel="noopener"><span class="badge">Pick</span><img src="images/opt_tire_a.svg" alt="Maxxis Hookworm slick" loading="lazy"><div class="oc"><b>Hookworm</b><span>2.5″ fat slick · cruiser</span></div></a>
+          <a class="opt" href="https://www.google.com/search?q=Maxxis+DTH+26+inch+tire" target="_blank" rel="noopener"><img src="images/opt_tire_b.svg" alt="Maxxis DTH semi-slick" loading="lazy"><div class="oc"><b>DTH</b><span>2.3″ slick · lively</span></div></a>
+          <a class="opt" href="https://www.google.com/search?q=Maxxis+Holy+Roller+26+inch+tire" target="_blank" rel="noopener"><img src="images/opt_tire_c.svg" alt="Maxxis Holy Roller block tread" loading="lazy"><div class="oc"><b>Holy Roller</b><span>light block · a little grip</span></div></a>
         </div>
       </div>
     </article>
@@ -375,7 +400,7 @@
       <div>
         <div class="head">
           <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 20 L14 20"/><rect x="14" y="14" width="18" height="12" rx="2"/><path d="M18 14 L18 26 M24 14 L24 26 M30 14 L30 26"/></svg>
-          <h3>Pedals</h3><span class="num">06</span>
+          <h3>Pedals</h3><span class="num">07</span>
         </div>
         <p>Usually the ugliest thing on an old MTB. The fix is <b>MKS</b> — polished Japanese pedals in chrome-bright metal. A pair of <b>electric-blue anodised bolts or a blue strap</b> ties them into the accent story.</p>
         <span class="role">Upgrade · small part, real signature</span>
@@ -383,10 +408,10 @@
       </div>
       <figure class="shot"><img src="images/pedals.svg" alt="A polished MKS pedal with toe clip" loading="lazy" width="480" height="360"></figure>
       <div class="opts">
-        <div class="cap">Options — pick one</div>
+        <div class="cap">Options — pick one <span class="caphint">— tap to compare &amp; shop ↗</span></div>
         <div class="optgrid two">
-          <div class="opt rec"><span class="badge">Pick</span><img src="images/opt_pedal_a.svg" alt="MKS Sylvan with toe clips" loading="lazy"><div class="oc"><b>Sylvan + clips</b><span>classic, holds your foot</span></div></div>
-          <div class="opt"><img src="images/opt_pedal_b.svg" alt="MKS Allways platform" loading="lazy"><div class="oc"><b>Allways</b><span>wide platform · flat shoes</span></div></div>
+          <a class="opt rec" href="https://www.google.com/search?q=MKS+Sylvan+Touring+pedals+toe+clips" target="_blank" rel="noopener"><span class="badge">Pick</span><img src="images/opt_pedal_a.svg" alt="MKS Sylvan with toe clips" loading="lazy"><div class="oc"><b>Sylvan + clips</b><span>classic, holds your foot</span></div></a>
+          <a class="opt" href="https://www.google.com/search?q=MKS+Allways+pedals" target="_blank" rel="noopener"><img src="images/opt_pedal_b.svg" alt="MKS Allways platform" loading="lazy"><div class="oc"><b>Allways</b><span>wide platform · flat shoes</span></div></a>
         </div>
       </div>
     </article>
@@ -396,7 +421,7 @@
       <div>
         <div class="head">
           <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><circle cx="20" cy="20" r="10"/><circle cx="20" cy="20" r="3"/><path d="M20 10 L20 6 M20 34 L20 30 M10 20 L6 20 M34 20 L30 20 M13 13 L10 10 M27 27 L30 30 M27 13 L30 10 M13 27 L10 30"/></svg>
-          <h3>Drivetrain</h3><span class="num">07</span>
+          <h3>Drivetrain</h3><span class="num">08</span>
         </div>
         <p>Yours has a triple crank and old shifters. The tidiest move is a <b>1× conversion</b>: keep one front chainring, drop the front derailleur and left shifter, run the existing rear gears. It declutters the cockpit and looks deliberate — and the <b>chainring bolts are another spot for a blue pop</b>.</p>
         <span class="role">Upgrade · simplify for the clean look</span>
@@ -404,10 +429,10 @@
       </div>
       <figure class="shot"><img src="images/drivetrain.svg" alt="A single chainring and crank" loading="lazy" width="480" height="360"></figure>
       <div class="opts">
-        <div class="cap">Options — pick one</div>
+        <div class="cap">Options — pick one <span class="caphint">— tap to compare &amp; shop ↗</span></div>
         <div class="optgrid two">
-          <div class="opt rec"><span class="badge">Pick</span><img src="images/opt_dt_a.svg" alt="Single ring on current crank" loading="lazy"><div class="oc"><b>Single ring</b><span>reuse your crank · cheapest</span></div></div>
-          <div class="opt"><img src="images/opt_dt_b.svg" alt="Polished Sugino crankset" loading="lazy"><div class="oc"><b>Sugino crankset</b><span>polished · the dream build</span></div></div>
+          <a class="opt rec" href="https://www.google.com/search?q=1x+single+chainring+conversion+kit+bicycle" target="_blank" rel="noopener"><span class="badge">Pick</span><img src="images/opt_dt_a.svg" alt="Single ring on current crank" loading="lazy"><div class="oc"><b>Single ring</b><span>reuse your crank · cheapest</span></div></a>
+          <a class="opt" href="https://www.google.com/search?q=Sugino+crankset+polished" target="_blank" rel="noopener"><img src="images/opt_dt_b.svg" alt="Polished Sugino crankset" loading="lazy"><div class="oc"><b>Sugino crankset</b><span>polished · the dream build</span></div></a>
         </div>
       </div>
     </article>
@@ -417,7 +442,7 @@
       <div>
         <div class="head">
           <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 30 L14 16 M32 30 L26 16"/><path d="M14 16 L26 16 M20 16 L20 9"/><circle cx="8" cy="30" r="2.5"/><circle cx="32" cy="30" r="2.5"/></svg>
-          <h3>Brakes</h3><span class="num">08</span>
+          <h3>Brakes</h3><span class="num">09</span>
         </div>
         <p>The old <b>cantilevers</b> stick out wide with a straddle cable across the front — too bulky for this build. The frame’s canti posts also take <b>mini V-brakes</b>: low-profile, tucked-in arms in <b>polished chrome</b>. Cleaner, stronger, and the <b>brake cable runs in electric blue</b> for the signature pop.</p>
         <span class="role">Upgrade · discreet chrome, blue cable</span>
@@ -425,11 +450,11 @@
       </div>
       <figure class="shot"><img src="images/brakes.svg" alt="A discreet chrome mini V-brake with an electric-blue cable" loading="lazy" width="480" height="360"></figure>
       <div class="opts">
-        <div class="cap">Options — pick one</div>
+        <div class="cap">Options — pick one <span class="caphint">— tap to compare &amp; shop ↗</span></div>
         <div class="optgrid">
-          <div class="opt rec"><span class="badge">Pick</span><img src="images/opt_brake_a.svg" alt="Chrome mini V-brake" loading="lazy"><div class="oc"><b>Mini-V · chrome</b><span>discreet + strong</span></div></div>
-          <div class="opt"><img src="images/opt_brake_b.svg" alt="Low-profile chrome cantilever" loading="lazy"><div class="oc"><b>Low-profile canti</b><span>slimmer than yours</span></div></div>
-          <div class="opt"><img src="images/opt_brake_c.svg" alt="Keep cantilevers with new pads" loading="lazy"><div class="oc"><b>Keep + salmon pads</b><span>cheapest, still works</span></div></div>
+          <a class="opt rec" href="https://www.google.com/search?q=Paul+Mini+Moto+mini+v+brake+polished" target="_blank" rel="noopener"><span class="badge">Pick</span><img src="images/opt_brake_a.svg" alt="Chrome mini V-brake" loading="lazy"><div class="oc"><b>Mini-V · chrome</b><span>discreet + strong</span></div></a>
+          <a class="opt" href="https://www.google.com/search?q=low+profile+cantilever+brake+bicycle" target="_blank" rel="noopener"><img src="images/opt_brake_b.svg" alt="Low-profile chrome cantilever" loading="lazy"><div class="oc"><b>Low-profile canti</b><span>slimmer than yours</span></div></a>
+          <a class="opt" href="https://www.google.com/search?q=Kool-Stop+salmon+cantilever+brake+pads" target="_blank" rel="noopener"><img src="images/opt_brake_c.svg" alt="Keep cantilevers with new pads" loading="lazy"><div class="oc"><b>Keep + salmon pads</b><span>cheapest, still works</span></div></a>
         </div>
       </div>
     </article>
@@ -439,7 +464,7 @@
       <div>
         <div class="head">
           <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 26 C12 18 16 12 20 12 C24 12 28 18 28 26 Z"/><path d="M9 26 L31 26"/><path d="M20 26 L20 30"/></svg>
-          <h3>Finishing details</h3><span class="num">09</span>
+          <h3>Finishing details</h3><span class="num">10</span>
         </div>
         <p>Everything above builds a tasteful bike. <b>This</b> is what makes it <em>yours</em>. The signature is the <b>electric-blue cable housing</b> plus <b>mini repetitions of the same blue in the bolts</b> — seat clamp, stem faceplate, bottle-cage and chainring bolts. Cheap, and the whole vibe.</p>
         <span class="role">Upgrade · where the look comes together</span>
@@ -447,11 +472,11 @@
       </div>
       <figure class="shot"><img src="images/details.svg" alt="Electric-blue cable housing, a brass bell and blue bolts" loading="lazy" width="480" height="360"></figure>
       <div class="opts">
-        <div class="cap">Where the blue repeats</div>
+        <div class="cap">Where the blue repeats <span class="caphint">— tap to compare &amp; shop ↗</span></div>
         <div class="optgrid">
-          <div class="opt"><img src="images/opt_grip_c.svg" alt="Electric-blue grips" loading="lazy"><div class="oc"><b>1 · Grips</b><span>at your hands</span></div></div>
-          <div class="opt"><img src="images/opt_brake_a.svg" alt="Electric-blue brake cable" loading="lazy"><div class="oc"><b>2 · Cables</b><span>housing runs</span></div></div>
-          <div class="opt"><img src="images/details.svg" alt="Electric-blue anodised bolts" loading="lazy"><div class="oc"><b>3 · Bolts</b><span>small anodised bits</span></div></div>
+          <a class="opt" href="https://www.google.com/search?q=electric+blue+lock-on+bicycle+grips" target="_blank" rel="noopener"><img src="images/opt_grip_c.svg" alt="Electric-blue grips" loading="lazy"><div class="oc"><b>1 · Grips</b><span>at your hands</span></div></a>
+          <a class="opt" href="https://www.google.com/search?q=electric+blue+brake+cable+housing+jagwire" target="_blank" rel="noopener"><img src="images/opt_brake_a.svg" alt="Electric-blue brake cable" loading="lazy"><div class="oc"><b>2 · Cables</b><span>housing runs</span></div></a>
+          <a class="opt" href="https://www.google.com/search?q=blue+anodized+bicycle+bolts+m5" target="_blank" rel="noopener"><img src="images/details.svg" alt="Electric-blue anodised bolts" loading="lazy"><div class="oc"><b>3 · Bolts</b><span>small anodised bits</span></div></a>
         </div>
       </div>
     </article>
@@ -461,7 +486,7 @@
       <div>
         <div class="head">
           <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="14" width="24" height="4" rx="1"/><path d="M10 18 L10 28 M30 18 L30 28 M8 14 L14 8 L26 8 L32 14"/></svg>
-          <h3>Rack &amp; fenders</h3><span class="num">10</span>
+          <h3>Rack &amp; fenders</h3><span class="num">11</span>
         </div>
         <p>Optional phase two, for the touring/rando end of the spectrum. A <b>Nitto front rack</b> with a small bag is almost a shop signature, and <b>Honjo hammered alloy fenders</b> make it look properly handbuilt — both in silver to sit with the chrome.</p>
         <span class="role">Optional · save for last</span>
@@ -469,10 +494,10 @@
       </div>
       <figure class="shot"><img src="images/rack.svg" alt="A front rack and fender over a chrome wheel" loading="lazy" width="480" height="360"></figure>
       <div class="opts">
-        <div class="cap">Options — add either or both</div>
+        <div class="cap">Options — add either or both <span class="caphint">— tap to compare &amp; shop ↗</span></div>
         <div class="optgrid two">
-          <div class="opt"><img src="images/opt_rack_a.svg" alt="Nitto front rack" loading="lazy"><div class="oc"><b>Nitto front rack</b><span>bag platform · signature</span></div></div>
-          <div class="opt"><img src="images/opt_rack_b.svg" alt="Honjo hammered fenders" loading="lazy"><div class="oc"><b>Honjo fenders</b><span>hammered alloy · all-weather</span></div></div>
+          <a class="opt" href="https://www.google.com/search?q=Nitto+front+rack+bicycle" target="_blank" rel="noopener"><img src="images/opt_rack_a.svg" alt="Nitto front rack" loading="lazy"><div class="oc"><b>Nitto front rack</b><span>bag platform · signature</span></div></a>
+          <a class="opt" href="https://www.google.com/search?q=Honjo+hammered+alloy+fenders" target="_blank" rel="noopener"><img src="images/opt_rack_b.svg" alt="Honjo hammered fenders" loading="lazy"><div class="oc"><b>Honjo fenders</b><span>hammered alloy · all-weather</span></div></a>
         </div>
       </div>
     </article>
