@@ -4,18 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trek 970 → City Build · A Blue Lug–style field manual</title>
-<meta name="description" content="A parts-by-parts guide to converting a 1990s Trek 970 mountain bike into a Blue Lug–style city bike. What each part is, what to change, and what to buy.">
+<meta name="description" content="A parts-by-parts guide to converting a 1990s Trek 970 mountain bike into a Blue Lug–style city bike: chrome cockpit, electric-blue accents, all-weather saddle, Maxxis slicks. What each part is, the options, and what to buy.">
 
 <!--
   ============================================================
-  HOW TO ADD PHOTOS
+  PICTURES
   ------------------------------------------------------------
-  Every part below has a <figure class="shot"> slot. To fill one:
-  1. Put your image in an /images folder next to this file
-  2. Replace the whole <figure> block with, e.g.:
-       <figure class="shot"><img src="images/bosco.jpg" alt="Nitto Bosco bar"></figure>
-  Empty slots render as labelled placeholders, so the page still
-  looks finished before you have photos.
+  Every part has a main illustration plus an "Options" row of
+  alternatives you can choose between. All artwork lives in the
+  /images folder as SVG. To use a real photo instead, just swap
+  any <img src="images/xxx.svg"> for your own file.
   ============================================================
 -->
 
@@ -29,11 +27,12 @@
     --paper:#f3f2ec;
     --panel:#ffffff;
     --blue:#1f43df;          /* Blue Lug signature blue — page identity */
-    --honey:#bd812b;         /* Brooks honey / leather */
-    --steel:#9aa0a2;         /* raw frame */
+    --eblue:#0a63ff;         /* electric blue — cables, grips & bolt accents */
+    --honey:#bd812b;         /* cork / tan */
+    --steel:#9aa0a2;         /* raw frame / chrome */
     --line:#e0ded3;
     --line-strong:#c9c6b8;
-    --pop:#1f43df;           /* live-editable accent in the "One Pop" recipe */
+    --pop:#0a63ff;           /* live-editable accent in the "One Pop" recipe */
     --shadow:0 1px 0 var(--line-strong), 0 14px 34px -22px rgba(24,26,28,.5);
   }
   *{box-sizing:border-box}
@@ -78,12 +77,12 @@
   .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:8px}
   .sec-head .n{font-family:"Space Mono",monospace;font-size:13px;color:var(--steel)}
   .sec-head h2{font-size:clamp(26px,4vw,38px)}
-  .sec-sub{color:#4a4e51;max-width:64ch;margin:6px 0 30px}
+  .sec-sub{color:#43474a;max-width:64ch;margin:6px 0 30px}
 
   /* ---- part entries ---- */
   .entry{background:var(--panel);border:1px solid var(--line);border-radius:16px;
     padding:22px;margin-bottom:18px;box-shadow:var(--shadow);
-    display:grid;grid-template-columns:1.35fr .9fr;gap:26px;align-items:start;
+    display:grid;grid-template-columns:1.35fr .9fr;gap:26px 26px;align-items:start;
     opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
   .entry.in{opacity:1;transform:none}
   @media(max-width:720px){.entry{grid-template-columns:1fr;padding:18px;gap:16px}}
@@ -98,21 +97,35 @@
 
   .spec{font-family:"Space Mono",monospace;font-size:13px;background:#faf9f4;
     border:1px dashed var(--line-strong);border-radius:10px;padding:12px 14px;margin-top:14px;line-height:1.7}
-  .spec .k{color:var(--steel)}
+  .spec .k{color:#6f746d}
   .spec .v{color:var(--ink)}
   .spec .flag{color:#b4491f}
+  .spec .blue{color:var(--eblue)}
 
-  /* image slots */
+  /* main image slot */
   .shot{margin:0;aspect-ratio:4/3;border-radius:12px;overflow:hidden;
-    background:
-      linear-gradient(135deg,#f6f5ef,#eceadf);
+    background:linear-gradient(135deg,#f6f5ef,#eceadf);
     border:1px solid var(--line-strong);display:flex;align-items:center;justify-content:center;text-align:center}
   .shot img{width:100%;height:100%;object-fit:cover;display:block}
-  .shot .ph{font-family:"Space Mono",monospace;font-size:12px;color:#8b8f80;padding:16px;line-height:1.5}
-  .shot .ph b{display:block;color:var(--ink);font-size:12px;letter-spacing:.04em;margin-bottom:5px}
+
+  /* ---- options gallery ---- */
+  .opts{grid-column:1 / -1;margin-top:4px;border-top:1px dashed var(--line-strong);padding-top:16px}
+  .opts .cap{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#6f746d;margin-bottom:12px}
+  .optgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .optgrid.two{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:620px){.optgrid,.optgrid.two{grid-template-columns:repeat(2,1fr)}}
+  .opt{position:relative;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel);transition:transform .15s ease,border-color .15s ease}
+  .opt:hover{border-color:var(--line-strong);transform:translateY(-2px)}
+  .opt img{width:100%;display:block;aspect-ratio:36/25;object-fit:cover;background:#f2f1ea;border-bottom:1px solid var(--line)}
+  .opt .oc{padding:9px 11px}
+  .opt .oc b{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:14px;display:block;letter-spacing:-.01em}
+  .opt .oc span{font-family:"Space Mono",monospace;font-size:11px;color:#6b7069;display:block;margin-top:2px}
+  .opt.rec{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue)}
+  .opt .badge{position:absolute;top:8px;right:8px;font-family:"Space Mono",monospace;font-size:10px;letter-spacing:.08em;
+    background:var(--blue);color:#fff;padding:3px 8px;border-radius:100px}
 
   /* ---- recipes ---- */
-  .tabs{display:flex;gap:8px;margin-bottom:22px}
+  .tabs{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap}
   .tab{font-family:"Space Mono",monospace;font-size:13px;letter-spacing:.02em;cursor:pointer;
     border:1px solid var(--line-strong);background:var(--panel);color:var(--ink);
     border-radius:100px;padding:9px 18px;transition:.15s}
@@ -124,27 +137,28 @@
   .recipe p{max-width:64ch;color:#3c4043;margin:.4em 0 22px}
   .swatches{display:flex;flex-wrap:wrap;gap:14px}
   .sw{width:118px}
-  .sw .chip{height:74px;border-radius:12px;border:1px solid rgba(0,0,0,.08);box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
+  .sw .chip{height:74px;border-radius:12px;border:1px solid rgba(0,0,0,.12);box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
   .sw .lab{font-family:"Space Mono",monospace;font-size:11px;margin-top:8px;line-height:1.4}
   .sw .lab b{display:block;letter-spacing:.02em}
-  .sw .lab span{color:var(--steel)}
+  .sw .lab span{color:#6b7069}
 
   .popbar{margin-top:26px;padding:20px;border:1px solid var(--line);border-radius:14px;background:#faf9f4}
-  .popbar .cap{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel);margin-bottom:14px}
+  .popbar .cap{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#6f746d;margin-bottom:14px}
   .picker{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
   .dot{width:32px;height:32px;border-radius:50%;cursor:pointer;border:2px solid #fff;
     box-shadow:0 0 0 1px var(--line-strong);transition:transform .12s}
   .dot:hover{transform:scale(1.12)}
   .dot[aria-pressed="true"]{box-shadow:0 0 0 2px var(--ink);transform:scale(1.12)}
   .poptrio{display:flex;gap:12px;margin-top:18px}
-  .poptrio div{flex:1;height:46px;border-radius:9px;background:var(--pop);display:flex;align-items:center;justify-content:center;
-    font-family:"Space Mono",monospace;font-size:11px;color:#fff;letter-spacing:.08em;transition:background .25s}
-  .poptrio .neutral{background:var(--steel)}
+  .poptrio div{flex:1;height:46px;border-radius:9px;background:var(--panel);border:1px solid var(--line-strong);
+    display:flex;align-items:center;justify-content:center;gap:9px;
+    font-family:"Space Mono",monospace;font-size:11px;color:var(--ink);letter-spacing:.08em}
+  .poptrio .d{width:16px;height:16px;border-radius:50%;background:var(--pop);border:1px solid rgba(0,0,0,.18);transition:background .25s}
 
   /* ---- budget ---- */
   .budget{width:100%;border-collapse:collapse;font-family:"Space Mono",monospace;font-size:14px;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
   .budget th,.budget td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line)}
-  .budget th{background:#faf9f4;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel)}
+  .budget th{background:#faf9f4;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#6f746d}
   .budget tr:last-child td{border-bottom:none}
   .budget .price{text-align:right;white-space:nowrap;color:var(--blue)}
   @media(max-width:520px){.budget th,.budget td{padding:11px 12px;font-size:12.5px}}
@@ -160,10 +174,10 @@
   .check li[aria-checked="true"] .box{background:var(--blue);border-color:var(--blue)}
   .check li[aria-checked="true"] .box::after{content:"";position:absolute;left:5px;top:1px;width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
   .check li[aria-checked="true"] .txt{color:var(--steel);text-decoration:line-through}
-  .txt .s{font-family:"Space Mono",monospace;font-size:12px;color:var(--steel);display:block}
+  .txt .s{font-family:"Space Mono",monospace;font-size:12px;color:#6f746d;display:block}
 
   /* ---- callout ---- */
-  .verify{background:#fff;border:1px solid var(--line);border-left:4px solid var(--honey);border-radius:12px;padding:20px 22px;box-shadow:var(--shadow)}
+  .verify{background:#fff;border:1px solid var(--line);border-left:4px solid var(--eblue);border-radius:12px;padding:20px 22px;box-shadow:var(--shadow)}
   .verify h3{font-size:19px;margin-bottom:8px}
   .verify ul{margin:10px 0 0;padding-left:0;list-style:none}
   .verify li{padding:7px 0;border-bottom:1px dotted var(--line-strong)}
@@ -177,7 +191,7 @@
   .src .m{font-family:"Space Mono",monospace;font-size:11px;color:var(--blue);letter-spacing:.04em;margin-top:2px}
   .src p{margin:9px 0 0;font-size:14.5px;color:#43474a}
 
-  footer{border-top:1px solid var(--line);padding:40px 0 60px;color:var(--steel);font-family:"Space Mono",monospace;font-size:12px;line-height:1.7}
+  footer{border-top:1px solid var(--line);padding:40px 0 60px;color:#6f746d;font-family:"Space Mono",monospace;font-size:12px;line-height:1.7}
   footer b{color:var(--ink)}
 
   /* focus */
@@ -204,26 +218,26 @@
   <div class="hero">
     <div class="eyebrow">A Blue Lug–style conversion guide</div>
     <h1>Trek&nbsp;970<br><span class="arrow">→</span> city&nbsp;bike</h1>
-    <p class="lede">Turning a stripped early-’90s steel mountain bike into a considered city machine — <b>restrained frame, joyful details.</b> Each part below: what it is, what to change, what to buy. Verify the sizes, then build it in phases.</p>
+    <p class="lede">Turning a stripped early-’90s steel mountain bike into a considered city machine — <b>raw &amp; chrome frame, electric-blue accents.</b> Each part below: what it is, the options to choose from, and what to buy. Verify the sizes, then build it in phases.</p>
     <div class="heroband">
       <span class="tag">True Temper chromoly</span>
       <span class="tag">26″ wheels</span>
       <span class="tag">Threaded / quill</span>
-      <span class="tag">Cantilever brakes</span>
-      <span class="tag"><b>Already stripped to raw</b></span>
+      <span class="tag">Canti posts → <b>mini-V</b></span>
+      <span class="tag"><b>Chrome + electric-blue</b></span>
     </div>
   </div>
 
   <!-- WHAT IS BLUE LUG -->
   <section id="intro" style="border-top:none">
     <div class="sec-head"><span class="n">↳</span><h2>The idea</h2></div>
-    <p class="sec-sub">Blue Lug is a Tokyo shop that made the everyday city bike into a craft object: a neutral quality-steel frame — often raw or a single clean colour — built with Japanese boutique parts (Nitto, MKS, Brooks, Paul) and given <b>one or two playful colour pops</b> through grips, cable housing and small brass details. The bike stays quiet; the accents do the talking. Your raw Trek is an ideal canvas for exactly that.</p>
+    <p class="sec-sub">Blue Lug is a Tokyo shop that made the everyday city bike into a craft object: a neutral quality-steel frame — raw, chromed, or a single clean colour — built with Japanese boutique parts (Nitto, MKS) and given <b>one repeating colour pop</b>. Here the frame and cockpit stay quiet in <b>chrome and raw steel</b>, and a single <b>electric blue</b> does all the talking — echoed in the brake cables, the grips, and small anodised bolts. The bike stays calm; the accents sing.</p>
   </section>
 
   <!-- PARTS -->
   <section id="parts">
     <div class="sec-head"><span class="n">01–10</span><h2>The parts, one by one</h2></div>
-    <p class="sec-sub">Green label = keep &amp; refresh what you have. Amber label = the upgrade worth making. Prices are rough EU street prices for planning, not quotes.</p>
+    <p class="sec-sub">Green label = keep &amp; refresh what you have. Amber label = the upgrade worth making. Each part shows a main pick plus the <b>options</b> you can choose between. Prices are rough EU street prices for planning, not quotes.</p>
 
     <!-- 00 frame -->
     <article class="entry keep">
@@ -234,10 +248,17 @@
         </div>
         <p>The foundation, and the part you <b>don’t</b> replace. A good True Temper steel frame, already stripped to bare metal — the look people pay framebuilders for. But raw steel rusts, so this is the one urgent job.</p>
         <span class="role">Keep · seal it soon</span>
-        <p>Two finishes fit the brief: <b>clear powdercoat</b> (durable, keeps the raw-steel look) or a <b>single bold colour</b> if you’d rather let the parts do the talking. Either way, add Frame Saver inside the tubes.</p>
-        <div class="spec"><span class="k">do:</span> <span class="v">clear-coat or 1-colour powder + internal frame saver</span><br><span class="k">cost:</span> <span class="v">≈ €60–120 at a coater</span> · <span class="flag">don’t leave bare over winter</span></div>
+        <p>Two finishes fit the brief: a <b>clear coat</b> that keeps the raw-steel/chrome look, or a <b>single bold colour</b> if you’d rather let the parts do the talking. Either way, add Frame Saver inside the tubes.</p>
+        <div class="spec"><span class="k">do:</span> <span class="v">clear-coat (raw look) or 1-colour powder + internal frame saver</span><br><span class="k">cost:</span> <span class="v">≈ €60–120 at a coater</span> · <span class="flag">don’t leave bare over winter</span></div>
       </div>
-      <figure class="shot"><img src="images/frame.svg" alt="Steel diamond frame, clear-coated raw" loading="lazy" width="480" height="360"></figure>
+      <figure class="shot"><img src="images/frame.svg" alt="Side view of a steel diamond frame with chrome finish" loading="lazy" width="480" height="360"></figure>
+      <div class="opts">
+        <div class="cap">Options — pick one</div>
+        <div class="optgrid two">
+          <div class="opt rec"><span class="badge">Pick</span><img src="images/opt_frame_a.svg" alt="Clear-coated raw steel frame" loading="lazy"><div class="oc"><b>Clear-coat raw</b><span>keeps bare-steel look · ≈ €60–90</span></div></div>
+          <div class="opt"><img src="images/opt_frame_b.svg" alt="Single-colour powdercoat frame" loading="lazy"><div class="oc"><b>One colour</b><span>single powder coat · ≈ €90–120</span></div></div>
+        </div>
+      </div>
     </article>
 
     <!-- 01 handlebar -->
@@ -247,11 +268,19 @@
           <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 22 C12 22 12 16 20 16 C28 16 28 22 34 22"/><path d="M6 22 L6 26 M34 22 L34 26"/></svg>
           <h3>Handlebar</h3><span class="num">01</span>
         </div>
-        <p>Changes the whole character of the bike, and where Blue Lug’s DNA lives. The bar you sit behind is <b>Nitto</b> — the Japanese maker the shop is basically synonymous with. For an upright klunker-into-city feel, a wide swept-back riser is the move.</p>
+        <p>Changes the whole character of the bike. You want a <b>chrome riser that isn’t too wide</b> — it rises up <em>and</em> sweeps back toward you, but gently (nowhere near 90°). That gives an upright, relaxed city position while the polished finish ties into the rest of the cockpit.</p>
         <span class="role">Upgrade · the personality choice</span>
-        <div class="spec"><span class="k">pick:</span> <span class="v">Nitto Bosco B2500AA (swept riser)</span><br><span class="k">alt:</span> <span class="v">Nitto bullhorn (RB-018) for a leaner look</span><br><span class="k">clamp:</span> <span class="v">25.4 mm</span> · <span class="k">cost:</span> <span class="v">≈ €70–85</span></div>
+        <div class="spec"><span class="k">pick:</span> <span class="v">chrome riser, ≈ 560–600 mm wide, ~30 mm rise, mild backsweep</span><br><span class="k">e.g.:</span> <span class="v">Nitto B603 chrome · Soma Oxford · VO Tall Stack</span><br><span class="k">clamp:</span> <span class="v">25.4 mm</span> · <span class="k">grips:</span> <span class="blue">electric-blue pop</span> · <span class="k">cost:</span> <span class="v">≈ €55–85</span></div>
       </div>
-      <figure class="shot"><img src="images/handlebar.svg" alt="Nitto Bosco wide swept-back riser bar" loading="lazy" width="480" height="360"></figure>
+      <figure class="shot"><img src="images/handlebar.svg" alt="Chrome swept-back riser handlebar with blue grips" loading="lazy" width="480" height="360"></figure>
+      <div class="opts">
+        <div class="cap">Options — how much sweep?</div>
+        <div class="optgrid">
+          <div class="opt rec"><span class="badge">Pick</span><img src="images/opt_bar_a.svg" alt="Chrome riser with mild sweep" loading="lazy"><div class="oc"><b>Mild sweep</b><span>subtle rise + backsweep</span></div></div>
+          <div class="opt"><img src="images/opt_bar_b.svg" alt="Chrome riser with more sweep" loading="lazy"><div class="oc"><b>More swept</b><span>hands rotate back further</span></div></div>
+          <div class="opt"><img src="images/opt_bar_c.svg" alt="Chrome promenade bar" loading="lazy"><div class="oc"><b>Promenade</b><span>full upright cruiser</span></div></div>
+        </div>
+      </div>
     </article>
 
     <!-- 02 stem -->
@@ -261,11 +290,18 @@
           <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 8 L20 24"/><path d="M20 16 L32 16"/><rect x="16" y="24" width="8" height="8" rx="1"/></svg>
           <h3>Stem</h3><span class="num">02</span>
         </div>
-        <p>The stem clamps the bar to the fork. Yours is a <b>quill</b> — it slots down <em>into</em> the fork rather than clamping outside it — because the bike has an old threaded headset. So you need a quill stem, not a modern one. Handily, the answer is the same family as the bar.</p>
+        <p>The stem clamps the bar to the fork. Yours is a <b>quill</b> — it slots down <em>into</em> the fork rather than clamping outside it — because the bike has an old threaded headset. So you need a quill stem, in <b>polished chrome to match the bar</b>.</p>
         <span class="role">Upgrade · must match the headset</span>
-        <div class="spec"><span class="k">pick:</span> <span class="v">Nitto Technomic (tall polished quill)</span><br><span class="k">clamp:</span> <span class="v">25.4 mm — matches the Bosco</span><br><span class="k">verify:</span> <span class="flag">quill Ø = 22.2 mm (1″) on this era</span> · <span class="k">cost:</span> <span class="v">≈ €55–70</span></div>
+        <div class="spec"><span class="k">pick:</span> <span class="v">Nitto Technomic — polished/chrome quill</span><br><span class="k">clamp:</span> <span class="v">25.4 mm — matches the bar</span><br><span class="k">verify:</span> <span class="flag">quill Ø = 22.2 mm (1″) on this era</span> · <span class="k">cost:</span> <span class="v">≈ €55–70</span></div>
       </div>
-      <figure class="shot"><img src="images/stem.svg" alt="Nitto Technomic quill stem in silver" loading="lazy" width="480" height="360"></figure>
+      <figure class="shot"><img src="images/stem.svg" alt="A chrome quill stem" loading="lazy" width="480" height="360"></figure>
+      <div class="opts">
+        <div class="cap">Options — how tall?</div>
+        <div class="optgrid two">
+          <div class="opt rec"><span class="badge">Pick</span><img src="images/opt_stem_a.svg" alt="Tall chrome quill stem" loading="lazy"><div class="oc"><b>Technomic tall</b><span>more upright · easy height</span></div></div>
+          <div class="opt"><img src="images/opt_stem_b.svg" alt="Standard chrome quill stem" loading="lazy"><div class="oc"><b>Technomic standard</b><span>lower, sportier reach</span></div></div>
+        </div>
+      </div>
     </article>
 
     <!-- 03 grips -->
@@ -275,25 +311,41 @@
           <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="16" width="26" height="8" rx="4"/><path d="M13 16 L13 24 M19 16 L19 24 M25 16 L25 24"/></svg>
           <h3>Grips</h3><span class="num">03</span>
         </div>
-        <p>The cheapest big decision. This is your first colour-pop opportunity — and it sets the tone for the whole bike. Warm and classic, or one loud accent?</p>
-        <span class="role">Upgrade · decide the mood here</span>
-        <div class="spec"><span class="k">warm:</span> <span class="v">cork or leather grips (match the saddle)</span><br><span class="k">pop:</span> <span class="v">bright lock-ons / ESI silicone in one colour</span><br><span class="k">cost:</span> <span class="v">≈ €20–45</span></div>
+        <p>The cheapest big decision, and <b>the first place the electric blue lands</b>. Grips are one of the three spots the pop colour repeats (grips · cables · bolts), so a bright lock-on grip here sets the whole tone.</p>
+        <span class="role">Upgrade · first hit of the pop</span>
+        <div class="spec"><span class="k">pop:</span> <span class="blue">electric-blue lock-on grips</span> <span class="v">(the pick)</span><br><span class="k">calm:</span> <span class="v">cork or black leather if you want blue only on cables</span><br><span class="k">cost:</span> <span class="v">≈ €20–45</span></div>
       </div>
-      <figure class="shot"><img src="images/grips.svg" alt="Cork/leather or single pop-colour grips" loading="lazy" width="480" height="360"></figure>
+      <figure class="shot"><img src="images/grips.svg" alt="Handlebar grips, cork and electric blue" loading="lazy" width="480" height="360"></figure>
+      <div class="opts">
+        <div class="cap">Options — pick one</div>
+        <div class="optgrid">
+          <div class="opt rec"><span class="badge">Pick</span><img src="images/opt_grip_c.svg" alt="Electric-blue grips" loading="lazy"><div class="oc"><b>Electric-blue</b><span>repeats the pop colour</span></div></div>
+          <div class="opt"><img src="images/opt_grip_a.svg" alt="Cork grips" loading="lazy"><div class="oc"><b>Cork / tan</b><span>warm &amp; neutral</span></div></div>
+          <div class="opt"><img src="images/opt_grip_b.svg" alt="Black grips" loading="lazy"><div class="oc"><b>Black leather</b><span>lets cables carry the blue</span></div></div>
+        </div>
+      </div>
     </article>
 
     <!-- 04 saddle -->
-    <article class="entry keep">
+    <article class="entry">
       <div>
         <div class="head">
           <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 18 C14 14 30 14 33 20 C34 24 26 24 20 22 C13 20 9 24 7 18 Z"/><path d="M20 22 L20 32"/></svg>
           <h3>Saddle</h3><span class="num">04</span>
         </div>
-        <p>You’re halfway there — a brown leather saddle is exactly right. If yours is comfy, keep it. The one upgrade people actually notice is a classic leather perch that breaks in to your shape.</p>
-        <span class="role">Keep · or upgrade to the icon</span>
-        <div class="spec"><span class="k">pick:</span> <span class="v">Brooks B17 in honey</span><br><span class="k">note:</span> <span class="v">ties the whole warm palette together</span><br><span class="k">cost:</span> <span class="v">≈ €110–140</span></div>
+        <p>Not a leather Brooks — an <b>all-weather Brooks Cambium C17</b>. It’s a vulcanised natural-rubber top with an organic-cotton cover: the Brooks look and comfort, but <b>waterproof, maintenance-free, and ready to ride with no break-in</b>. Perfect for a bike left outside and ridden in the rain.</p>
+        <span class="role">Upgrade · the all-weather icon</span>
+        <div class="spec"><span class="k">pick:</span> <span class="v">Brooks Cambium C17 (all-weather)</span><br><span class="k">note:</span> <span class="v">no oiling, no rain cover — unlike leather B17</span><br><span class="k">cost:</span> <span class="v">≈ €90–120</span></div>
       </div>
-      <figure class="shot"><img src="images/saddle.svg" alt="Brooks B17 honey leather saddle" loading="lazy" width="480" height="360"></figure>
+      <figure class="shot"><img src="images/saddle.svg" alt="A Brooks Cambium C17 all-weather saddle" loading="lazy" width="480" height="360"></figure>
+      <div class="opts">
+        <div class="cap">Options — C17 colourway</div>
+        <div class="optgrid">
+          <div class="opt rec"><span class="badge">Pick</span><img src="images/opt_saddle_a.svg" alt="Brooks Cambium C17 in slate" loading="lazy"><div class="oc"><b>C17 slate</b><span>grey — quiet, hides dirt</span></div></div>
+          <div class="opt"><img src="images/opt_saddle_b.svg" alt="Brooks Cambium C17 in black" loading="lazy"><div class="oc"><b>C17 black</b><span>most discreet</span></div></div>
+          <div class="opt"><img src="images/opt_saddle_c.svg" alt="Brooks Cambium C17 in natural rubber" loading="lazy"><div class="oc"><b>C17 natural</b><span>warm tan rubber</span></div></div>
+        </div>
+      </div>
     </article>
 
     <!-- 05 tires -->
@@ -303,11 +355,19 @@
           <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><circle cx="20" cy="20" r="13"/><circle cx="20" cy="20" r="5"/><path d="M20 7 L20 12 M20 28 L20 33 M7 20 L12 20 M28 20 L33 20"/></svg>
           <h3>Tires</h3><span class="num">05</span>
         </div>
-        <p>The single biggest visual transformation. Swapping knobbies for <b>tan-wall or cream slicks</b> reads “intentional build” from across the street. 26″ narrows the field, but two options nail it.</p>
+        <p>The single biggest visual transformation. Swapping knobbies for <b>Maxxis urban slicks</b> reads “intentional build” from across the street — fat, smooth, fast-rolling rubber on the chrome rims. Run them with standard tubes.</p>
         <span class="role">Upgrade · highest impact per euro</span>
-        <div class="spec"><span class="k">pick:</span> <span class="v">Panaracer Pasela, amber wall (rando look)</span><br><span class="k">fat:</span> <span class="v">Schwalbe Fat Frank, cream (cruiser look)</span><br><span class="k">verify:</span> <span class="flag">size marked 26 × 1.x on the casing</span> · <span class="k">cost:</span> <span class="v">≈ €30–40 each</span></div>
+        <div class="spec"><span class="k">pick:</span> <span class="v">Maxxis Hookworm 26 × 2.5 — fat urban slick</span><br><span class="k">tubes:</span> <span class="v">standard 26″ Schrader/Presta to match your rims</span><br><span class="k">verify:</span> <span class="flag">size marked 26 × 2.x on the casing</span> · <span class="k">cost:</span> <span class="v">≈ €30–45 each</span></div>
       </div>
-      <figure class="shot"><img src="images/tires.svg" alt="Panaracer Pasela amber-wall 26-inch tire" loading="lazy" width="480" height="360"></figure>
+      <figure class="shot"><img src="images/tires.svg" alt="A Maxxis urban slick tire on a chrome rim" loading="lazy" width="480" height="360"></figure>
+      <div class="opts">
+        <div class="cap">Options — Maxxis tread</div>
+        <div class="optgrid">
+          <div class="opt rec"><span class="badge">Pick</span><img src="images/opt_tire_a.svg" alt="Maxxis Hookworm slick" loading="lazy"><div class="oc"><b>Hookworm</b><span>2.5″ fat slick · cruiser</span></div></div>
+          <div class="opt"><img src="images/opt_tire_b.svg" alt="Maxxis DTH semi-slick" loading="lazy"><div class="oc"><b>DTH</b><span>2.3″ slick · lively</span></div></div>
+          <div class="opt"><img src="images/opt_tire_c.svg" alt="Maxxis Holy Roller block tread" loading="lazy"><div class="oc"><b>Holy Roller</b><span>light block · a little grip</span></div></div>
+        </div>
+      </div>
     </article>
 
     <!-- 06 pedals -->
@@ -317,11 +377,18 @@
           <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 20 L14 20"/><rect x="14" y="14" width="18" height="12" rx="2"/><path d="M18 14 L18 26 M24 14 L24 26 M30 14 L30 26"/></svg>
           <h3>Pedals</h3><span class="num">06</span>
         </div>
-        <p>Usually the ugliest thing on an old MTB. The fix is <b>MKS</b> — polished metal Japanese pedals, often with toe clips or leather straps. Silver metal underfoot instantly lifts the build.</p>
+        <p>Usually the ugliest thing on an old MTB. The fix is <b>MKS</b> — polished Japanese pedals in chrome-bright metal. A pair of <b>electric-blue anodised bolts or a blue strap</b> ties them into the accent story.</p>
         <span class="role">Upgrade · small part, real signature</span>
-        <div class="spec"><span class="k">pick:</span> <span class="v">MKS Sylvan Touring + toe clips</span><br><span class="k">wide:</span> <span class="v">MKS Allways / Lambda for flat-shoe comfort</span><br><span class="k">cost:</span> <span class="v">≈ €55–90</span></div>
+        <div class="spec"><span class="k">pick:</span> <span class="v">MKS Sylvan Touring + toe clips</span><br><span class="k">wide:</span> <span class="v">MKS Allways / Lambda for flat-shoe comfort</span><br><span class="k">accent:</span> <span class="blue">blue anodised bolts</span> · <span class="k">cost:</span> <span class="v">≈ €55–90</span></div>
       </div>
-      <figure class="shot"><img src="images/pedals.svg" alt="MKS Sylvan Touring pedals with toe clips" loading="lazy" width="480" height="360"></figure>
+      <figure class="shot"><img src="images/pedals.svg" alt="A polished MKS pedal with toe clip" loading="lazy" width="480" height="360"></figure>
+      <div class="opts">
+        <div class="cap">Options — pick one</div>
+        <div class="optgrid two">
+          <div class="opt rec"><span class="badge">Pick</span><img src="images/opt_pedal_a.svg" alt="MKS Sylvan with toe clips" loading="lazy"><div class="oc"><b>Sylvan + clips</b><span>classic, holds your foot</span></div></div>
+          <div class="opt"><img src="images/opt_pedal_b.svg" alt="MKS Allways platform" loading="lazy"><div class="oc"><b>Allways</b><span>wide platform · flat shoes</span></div></div>
+        </div>
+      </div>
     </article>
 
     <!-- 07 drivetrain -->
@@ -331,25 +398,40 @@
           <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><circle cx="20" cy="20" r="10"/><circle cx="20" cy="20" r="3"/><path d="M20 10 L20 6 M20 34 L20 30 M10 20 L6 20 M34 20 L30 20 M13 13 L10 10 M27 27 L30 30 M27 13 L30 10 M13 27 L10 30"/></svg>
           <h3>Drivetrain</h3><span class="num">07</span>
         </div>
-        <p>Yours has a triple crank and old shifters. The tidiest Blue Lug-style move is a <b>1× conversion</b>: keep one front chainring, drop the front derailleur and left shifter, run the existing rear gears. It declutters the cockpit and looks deliberate.</p>
+        <p>Yours has a triple crank and old shifters. The tidiest move is a <b>1× conversion</b>: keep one front chainring, drop the front derailleur and left shifter, run the existing rear gears. It declutters the cockpit and looks deliberate — and the <b>chainring bolts are another spot for a blue pop</b>.</p>
         <span class="role">Upgrade · simplify for the clean look</span>
-        <div class="spec"><span class="k">cheap:</span> <span class="v">single ring + spacers on current crank</span><br><span class="k">boutique:</span> <span class="v">polished Sugino crankset</span><br><span class="k">also:</span> <span class="v">fresh chain + cassette</span> · <span class="k">cost:</span> <span class="v">≈ €40–160</span></div>
+        <div class="spec"><span class="k">cheap:</span> <span class="v">single ring + spacers on current crank</span><br><span class="k">boutique:</span> <span class="v">polished Sugino crankset</span><br><span class="k">also:</span> <span class="v">fresh chain + cassette</span> · <span class="blue">blue chainring bolts</span> · <span class="k">cost:</span> <span class="v">≈ €40–160</span></div>
       </div>
-      <figure class="shot"><img src="images/drivetrain.svg" alt="1x single chainring and crank" loading="lazy" width="480" height="360"></figure>
+      <figure class="shot"><img src="images/drivetrain.svg" alt="A single chainring and crank" loading="lazy" width="480" height="360"></figure>
+      <div class="opts">
+        <div class="cap">Options — pick one</div>
+        <div class="optgrid two">
+          <div class="opt rec"><span class="badge">Pick</span><img src="images/opt_dt_a.svg" alt="Single ring on current crank" loading="lazy"><div class="oc"><b>Single ring</b><span>reuse your crank · cheapest</span></div></div>
+          <div class="opt"><img src="images/opt_dt_b.svg" alt="Polished Sugino crankset" loading="lazy"><div class="oc"><b>Sugino crankset</b><span>polished · the dream build</span></div></div>
+        </div>
+      </div>
     </article>
 
     <!-- 08 brakes -->
-    <article class="entry keep">
+    <article class="entry">
       <div>
         <div class="head">
           <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 30 L14 16 M32 30 L26 16"/><path d="M14 16 L26 16 M20 16 L20 9"/><circle cx="8" cy="30" r="2.5"/><circle cx="32" cy="30" r="2.5"/></svg>
           <h3>Brakes</h3><span class="num">08</span>
         </div>
-        <p>Those are <b>cantilevers</b> — two arms on frame posts joined by a straddle cable. Period-correct and worth keeping. The cheap win is better pads; the dream-build swap is CNC’d brakes the shop reveres.</p>
-        <span class="role">Keep · upgrade the pads (or go boutique)</span>
-        <div class="spec"><span class="k">cheap win:</span> <span class="v">Kool-Stop salmon pads (≈ €25)</span><br><span class="k">boutique:</span> <span class="v">Paul Neo-Retro cantis + Paul/Dia-Compe levers</span><br><span class="k">cost:</span> <span class="v">pads €25 · Paul set ≈ €180–220</span></div>
+        <p>The old <b>cantilevers</b> stick out wide with a straddle cable across the front — too bulky for this build. The frame’s canti posts also take <b>mini V-brakes</b>: low-profile, tucked-in arms in <b>polished chrome</b>. Cleaner, stronger, and the <b>brake cable runs in electric blue</b> for the signature pop.</p>
+        <span class="role">Upgrade · discreet chrome, blue cable</span>
+        <div class="spec"><span class="k">pick:</span> <span class="v">polished mini V-brakes (e.g. Paul Mini Moto)</span><br><span class="k">levers:</span> <span class="v">short-pull, matched to mini-V</span><br><span class="k">cable:</span> <span class="blue">electric-blue housing</span> + <span class="blue">blue pinch bolts</span><br><span class="k">pads:</span> <span class="v">Kool-Stop salmon</span> · <span class="k">cost:</span> <span class="v">≈ €70–200 set</span></div>
       </div>
-      <figure class="shot"><img src="images/brakes.svg" alt="Cantilever brake with Kool-Stop salmon pads" loading="lazy" width="480" height="360"></figure>
+      <figure class="shot"><img src="images/brakes.svg" alt="A discreet chrome mini V-brake with an electric-blue cable" loading="lazy" width="480" height="360"></figure>
+      <div class="opts">
+        <div class="cap">Options — pick one</div>
+        <div class="optgrid">
+          <div class="opt rec"><span class="badge">Pick</span><img src="images/opt_brake_a.svg" alt="Chrome mini V-brake" loading="lazy"><div class="oc"><b>Mini-V · chrome</b><span>discreet + strong</span></div></div>
+          <div class="opt"><img src="images/opt_brake_b.svg" alt="Low-profile chrome cantilever" loading="lazy"><div class="oc"><b>Low-profile canti</b><span>slimmer than yours</span></div></div>
+          <div class="opt"><img src="images/opt_brake_c.svg" alt="Keep cantilevers with new pads" loading="lazy"><div class="oc"><b>Keep + salmon pads</b><span>cheapest, still works</span></div></div>
+        </div>
+      </div>
     </article>
 
     <!-- 09 details -->
@@ -359,11 +441,19 @@
           <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 26 C12 18 16 12 20 12 C24 12 28 18 28 26 Z"/><path d="M9 26 L31 26"/><path d="M20 26 L20 30"/></svg>
           <h3>Finishing details</h3><span class="num">09</span>
         </div>
-        <p>Everything above builds a tasteful bike. <b>This</b> is what makes it a <em>Blue Lug</em> bike. The shop’s signature is <b>coloured cable housing</b> — running the cables in a bright colour that repeats an accent elsewhere. Cheap, and the whole vibe.</p>
-        <span class="role">Upgrade · where the shop’s look happens</span>
-        <div class="spec"><span class="k">housing:</span> <span class="v">Jagwire / Nissen in your pop colour</span><br><span class="k">bell:</span> <span class="v">Crane “Suzu” brass bell</span><br><span class="k">cage:</span> <span class="v">Nitto or King silver bottle cage</span><br><span class="k">cost:</span> <span class="v">≈ €70–110 all-in</span></div>
+        <p>Everything above builds a tasteful bike. <b>This</b> is what makes it <em>yours</em>. The signature is the <b>electric-blue cable housing</b> plus <b>mini repetitions of the same blue in the bolts</b> — seat clamp, stem faceplate, bottle-cage and chainring bolts. Cheap, and the whole vibe.</p>
+        <span class="role">Upgrade · where the look comes together</span>
+        <div class="spec"><span class="k">housing:</span> <span class="blue">Jagwire / Nissen electric-blue</span> <span class="v">(brake + shift)</span><br><span class="k">bolts:</span> <span class="blue">blue anodised M5/M6</span> <span class="v">— repeat in 3–4 spots</span><br><span class="k">bell:</span> <span class="v">Crane “Suzu” brass bell</span> · <span class="k">cage:</span> <span class="v">silver bottle cage</span><br><span class="k">cost:</span> <span class="v">≈ €60–100 all-in</span></div>
       </div>
-      <figure class="shot"><img src="images/details.svg" alt="Brass bell and coloured cable housing" loading="lazy" width="480" height="360"></figure>
+      <figure class="shot"><img src="images/details.svg" alt="Electric-blue cable housing, a brass bell and blue bolts" loading="lazy" width="480" height="360"></figure>
+      <div class="opts">
+        <div class="cap">Where the blue repeats</div>
+        <div class="optgrid">
+          <div class="opt"><img src="images/opt_grip_c.svg" alt="Electric-blue grips" loading="lazy"><div class="oc"><b>1 · Grips</b><span>at your hands</span></div></div>
+          <div class="opt"><img src="images/opt_brake_a.svg" alt="Electric-blue brake cable" loading="lazy"><div class="oc"><b>2 · Cables</b><span>housing runs</span></div></div>
+          <div class="opt"><img src="images/details.svg" alt="Electric-blue anodised bolts" loading="lazy"><div class="oc"><b>3 · Bolts</b><span>small anodised bits</span></div></div>
+        </div>
+      </div>
     </article>
 
     <!-- 10 optional -->
@@ -373,11 +463,18 @@
           <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="14" width="24" height="4" rx="1"/><path d="M10 18 L10 28 M30 18 L30 28 M8 14 L14 8 L26 8 L32 14"/></svg>
           <h3>Rack &amp; fenders</h3><span class="num">10</span>
         </div>
-        <p>Optional phase two, for the touring/rando end of the spectrum. A <b>Nitto front rack</b> with a small bag is almost a shop signature, and <b>Honjo hammered alloy fenders</b> make it look properly handbuilt.</p>
+        <p>Optional phase two, for the touring/rando end of the spectrum. A <b>Nitto front rack</b> with a small bag is almost a shop signature, and <b>Honjo hammered alloy fenders</b> make it look properly handbuilt — both in silver to sit with the chrome.</p>
         <span class="role">Optional · save for last</span>
         <div class="spec"><span class="k">rack:</span> <span class="v">Nitto front rack (≈ €110–150)</span><br><span class="k">fenders:</span> <span class="v">Honjo hammered alloy (≈ €110–140)</span></div>
       </div>
-      <figure class="shot"><img src="images/rack.svg" alt="Nitto front rack and Honjo fenders" loading="lazy" width="480" height="360"></figure>
+      <figure class="shot"><img src="images/rack.svg" alt="A front rack and fender over a chrome wheel" loading="lazy" width="480" height="360"></figure>
+      <div class="opts">
+        <div class="cap">Options — add either or both</div>
+        <div class="optgrid two">
+          <div class="opt"><img src="images/opt_rack_a.svg" alt="Nitto front rack" loading="lazy"><div class="oc"><b>Nitto front rack</b><span>bag platform · signature</span></div></div>
+          <div class="opt"><img src="images/opt_rack_b.svg" alt="Honjo hammered fenders" loading="lazy"><div class="oc"><b>Honjo fenders</b><span>hammered alloy · all-weather</span></div></div>
+        </div>
+      </div>
     </article>
   </section>
 
@@ -387,45 +484,43 @@
     <p class="sec-sub">Same parts, two directions. Pick one and commit — coherence is what makes these bikes look expensive.</p>
 
     <div class="tabs" role="tablist">
-      <button class="tab" role="tab" aria-selected="true" data-r="a">Raw &amp; Honey</button>
-      <button class="tab" role="tab" aria-selected="false" data-r="b">One Pop</button>
+      <button class="tab" role="tab" aria-selected="true" data-r="a">Electric Blue Pop</button>
+      <button class="tab" role="tab" aria-selected="false" data-r="b">Raw &amp; Chrome</button>
     </div>
 
     <div class="recipe on" data-r="a">
-      <h3>Raw &amp; Honey — warm classic</h3>
-      <p>Clear-coated raw frame, amber tires, honey Brooks, cork or leather grips, brown housing, brass bell, everything else polished silver. No loud colour — timeless and warm.</p>
+      <h3>Electric Blue Pop — the build here</h3>
+      <p>Raw/chrome frame and cockpit, black Maxxis slicks, a slate C17. Then pick <b>one</b> electric blue and repeat it in exactly three places: <b>grips, brake cables, bolts</b>. Everything else stays chrome and quiet. Audition the pop below — swap it for any colour and it stays readable.</p>
       <div class="swatches">
-        <div class="sw"><div class="chip" style="background:#b9bcbd"></div><div class="lab"><b>Raw steel</b><span>frame, clear-coat</span></div></div>
-        <div class="sw"><div class="chip" style="background:#bd812b"></div><div class="lab"><b>Honey</b><span>saddle, grips</span></div></div>
-        <div class="sw"><div class="chip" style="background:#e8d7b0"></div><div class="lab"><b>Cream / amber</b><span>tires</span></div></div>
-        <div class="sw"><div class="chip" style="background:#5a3d22"></div><div class="lab"><b>Brown</b><span>housing</span></div></div>
-        <div class="sw"><div class="chip" style="background:#caa451"></div><div class="lab"><b>Brass</b><span>bell, small bits</span></div></div>
-      </div>
-    </div>
-
-    <div class="recipe" data-r="b">
-      <h3>One Pop — the real Blue Lug move</h3>
-      <p>Raw frame, black or tan tires, then pick <b>one</b> accent colour and repeat it in exactly three places: grips, cable housing, bell. Everything else stays silver and leather. Audition your pop colour below — it embodies the whole idea.</p>
-      <div class="swatches">
-        <div class="sw"><div class="chip" style="background:#b9bcbd"></div><div class="lab"><b>Raw steel</b><span>frame</span></div></div>
-        <div class="sw"><div class="chip" style="background:#26282a"></div><div class="lab"><b>Black</b><span>tires, silver bits</span></div></div>
-        <div class="sw"><div class="chip" style="background:#bd812b"></div><div class="lab"><b>Leather</b><span>saddle</span></div></div>
-        <div class="sw"><div class="chip" id="popChip" style="background:var(--pop)"></div><div class="lab"><b>Your pop</b><span id="popName">Blue Lug blue</span></div></div>
+        <div class="sw"><div class="chip" style="background:linear-gradient(180deg,#eef1f3,#aeb6bd)"></div><div class="lab"><b>Chrome / raw</b><span>frame, cockpit, brakes</span></div></div>
+        <div class="sw"><div class="chip" style="background:#26282a"></div><div class="lab"><b>Black</b><span>Maxxis slicks</span></div></div>
+        <div class="sw"><div class="chip" style="background:#5f6b73"></div><div class="lab"><b>Slate</b><span>C17 saddle</span></div></div>
+        <div class="sw"><div class="chip" id="popChip" style="background:var(--pop)"></div><div class="lab"><b>Your pop</b><span id="popName">Electric blue</span></div></div>
       </div>
 
       <div class="popbar">
-        <div class="cap">Audition the pop colour</div>
+        <div class="cap">Audition the pop colour — repeated in grips · cables · bolts</div>
         <div class="picker" role="group" aria-label="Pop colour">
-          <button class="dot" style="background:#1f43df" data-c="#1f43df" data-n="Blue Lug blue" aria-pressed="true"></button>
+          <button class="dot" style="background:#0a63ff" data-c="#0a63ff" data-n="Electric blue" aria-pressed="true"></button>
+          <button class="dot" style="background:#1f43df" data-c="#1f43df" data-n="Blue Lug blue" aria-pressed="false"></button>
           <button class="dot" style="background:#d94f1e" data-c="#d94f1e" data-n="Burnt orange" aria-pressed="false"></button>
           <button class="dot" style="background:#1f9e86" data-c="#1f9e86" data-n="Turquoise" aria-pressed="false"></button>
           <button class="dot" style="background:#e0348b" data-c="#e0348b" data-n="Magenta" aria-pressed="false"></button>
           <button class="dot" style="background:#e3b71c" data-c="#e3b71c" data-n="Yellow" aria-pressed="false"></button>
-          <button class="dot" style="background:#6b4bd6" data-c="#6b4bd6" data-n="Violet" aria-pressed="false"></button>
         </div>
         <div class="poptrio">
-          <div>GRIPS</div><div>HOUSING</div><div>BELL</div>
+          <div><span class="d"></span>GRIPS</div><div><span class="d"></span>CABLES</div><div><span class="d"></span>BOLTS</div>
         </div>
+      </div>
+    </div>
+
+    <div class="recipe" data-r="b">
+      <h3>Raw &amp; Chrome — quiet monochrome</h3>
+      <p>If you’d rather skip colour entirely: clear-coated raw frame, all-chrome cockpit and mini-V brakes, black Maxxis slicks, a black C17, silver everywhere. No pop at all — just steel, chrome and black. Timeless, and impossible to get wrong.</p>
+      <div class="swatches">
+        <div class="sw"><div class="chip" style="background:linear-gradient(180deg,#eef1f3,#aeb6bd)"></div><div class="lab"><b>Chrome / raw</b><span>frame &amp; cockpit</span></div></div>
+        <div class="sw"><div class="chip" style="background:#26282a"></div><div class="lab"><b>Black</b><span>tires &amp; saddle</span></div></div>
+        <div class="sw"><div class="chip" style="background:#9aa0a2"></div><div class="lab"><b>Silver</b><span>bolts &amp; bell</span></div></div>
       </div>
     </div>
   </section>
@@ -437,9 +532,9 @@
     <table class="budget">
       <thead><tr><th>Path</th><th>What’s in it</th><th class="price">Est.</th></tr></thead>
       <tbody>
-        <tr><td>Starter trio</td><td>tan tires + colour grips + colour housing</td><td class="price">&lt; €120</td></tr>
-        <tr><td>Smart full build</td><td>Nitto cockpit · Brooks · tires · MKS · 1× · housing · bell</td><td class="price">€450–650</td></tr>
-        <tr><td>Full boutique</td><td>+ Paul brakes · Sugino crank · Nitto rack · Honjo fenders</td><td class="price">€900–1,300+</td></tr>
+        <tr><td>Starter trio</td><td>Maxxis slicks + blue grips + blue brake cables</td><td class="price">&lt; €130</td></tr>
+        <tr><td>Smart full build</td><td>chrome cockpit · C17 · Maxxis · MKS · 1× · mini-V · blue cables · bell</td><td class="price">€450–650</td></tr>
+        <tr><td>Full boutique</td><td>+ Paul mini-V · Sugino crank · Nitto rack · Honjo fenders</td><td class="price">€900–1,300+</td></tr>
       </tbody>
     </table>
   </section>
@@ -451,7 +546,7 @@
       <h3>Three numbers to confirm first</h3>
       <p style="margin:0;color:#43474a">Old MTBs vary, and the wrong number means a returned part. Check these before ordering anything:</p>
       <ul>
-        <li><b>Seatpost diameter</b> — read it off the post, likely <code>27.2 mm</code>. Sets the saddle post + any dropper thoughts.</li>
+        <li><b>Seatpost diameter</b> — read it off the post, likely <code>27.2 mm</code>. Sets the C17’s seatpost.</li>
         <li><b>Headset / steerer</b> — this era is usually <code>1″ threaded</code>, which is why the stem is a quill. Confirms the Technomic fits.</li>
         <li><b>Rear hub spacing</b> — measure the rear dropout gap, often <code>135 mm</code> here. Governs any wheel or cassette change.</li>
       </ul>
@@ -467,19 +562,20 @@
       <h3><span class="p">P1</span> Seal &amp; roll (a weekend)</h3>
       <ul class="check" data-list="p1">
         <li aria-checked="false"><span class="box"></span><span class="txt">Clear-coat or powder the frame + Frame Saver <span class="s">the one urgent job</span></span></li>
-        <li aria-checked="false"><span class="box"></span><span class="txt">Fit tan/cream tires <span class="s">biggest visual change</span></span></li>
-        <li aria-checked="false"><span class="box"></span><span class="txt">Colour grips + coloured cable housing <span class="s">the Blue Lug pop</span></span></li>
+        <li aria-checked="false"><span class="box"></span><span class="txt">Fit Maxxis urban slicks + tubes <span class="s">biggest visual change</span></span></li>
+        <li aria-checked="false"><span class="box"></span><span class="txt">Electric-blue grips + electric-blue brake cables <span class="s">the pop, in two of three spots</span></span></li>
         <li aria-checked="false"><span class="box"></span><span class="txt">Kool-Stop salmon pads + fresh chain <span class="s">safety + shifting</span></span></li>
-        <li aria-checked="false"><span class="box"></span><span class="txt">Crane brass bell <span class="s">the jewel</span></span></li>
+        <li aria-checked="false"><span class="box"></span><span class="txt">Crane brass bell + blue anodised bolts <span class="s">the jewels</span></span></li>
       </ul>
     </div>
 
     <div class="phase">
       <h3><span class="p">P2</span> Cockpit &amp; contact points</h3>
       <ul class="check" data-list="p2">
-        <li aria-checked="false"><span class="box"></span><span class="txt">Nitto Bosco bar + Nitto Technomic quill stem</span></li>
+        <li aria-checked="false"><span class="box"></span><span class="txt">Chrome riser bar + chrome Nitto Technomic quill stem</span></li>
+        <li aria-checked="false"><span class="box"></span><span class="txt">Polished mini V-brakes + short-pull levers</span></li>
         <li aria-checked="false"><span class="box"></span><span class="txt">MKS pedals + toe clips</span></li>
-        <li aria-checked="false"><span class="box"></span><span class="txt">Brooks B17 honey (if upgrading the saddle)</span></li>
+        <li aria-checked="false"><span class="box"></span><span class="txt">Brooks Cambium C17 (all-weather)</span></li>
         <li aria-checked="false"><span class="box"></span><span class="txt">1× conversion — drop front mech + left shifter</span></li>
       </ul>
     </div>
@@ -487,7 +583,7 @@
     <div class="phase">
       <h3><span class="p">P3</span> Boutique &amp; touring (optional)</h3>
       <ul class="check" data-list="p3">
-        <li aria-checked="false"><span class="box"></span><span class="txt">Paul Neo-Retro cantis + levers</span></li>
+        <li aria-checked="false"><span class="box"></span><span class="txt">Paul Mini Moto mini-V (the boutique brake)</span></li>
         <li aria-checked="false"><span class="box"></span><span class="txt">Sugino crankset</span></li>
         <li aria-checked="false"><span class="box"></span><span class="txt">Nitto front rack + bag</span></li>
         <li aria-checked="false"><span class="box"></span><span class="txt">Honjo hammered fenders</span></li>
@@ -500,8 +596,8 @@
     <div class="sec-head"><span class="n">↳</span><h2>Where to buy — Berlin</h2></div>
     <div class="sources">
       <div class="src"><div class="t">Gramm Tourpacking</div><div class="m">BERLIN · IN PERSON</div><p>Rando/bikepacking shop that carries much of this Nitto/Brooks/Japanese world. Best local for hands-on.</p></div>
-      <div class="src"><div class="t">bike-components.de</div><div class="m">DE · MAIL ORDER</div><p>Stocks Nitto, MKS, Brooks, Panaracer, Paul. Everyday workhorse for the build.</p></div>
-      <div class="src"><div class="t">r2-bike.com</div><div class="m">DE · MAIL ORDER</div><p>Deep boutique catalogue — good for the harder-to-find bits.</p></div>
+      <div class="src"><div class="t">bike-components.de</div><div class="m">DE · MAIL ORDER</div><p>Stocks Nitto, MKS, Brooks Cambium, Maxxis, Paul, Jagwire housing. Everyday workhorse for the build.</p></div>
+      <div class="src"><div class="t">r2-bike.com</div><div class="m">DE · MAIL ORDER</div><p>Deep boutique catalogue — good for mini-V brakes, blue housing and the harder-to-find bits.</p></div>
       <div class="src"><div class="t">Kleinanzeigen</div><div class="m">DE · SECOND-HAND</div><p>Constantly sheds used Nitto bars, Brooks saddles, MKS pedals in this city. Search first, save money.</p></div>
       <div class="src"><div class="t"><a href="https://blue-lug.com" target="_blank" rel="noopener">Blue Lug</a></div><div class="m">TOKYO · INSPIRATION</div><p>The source. Ships worldwide, but add ~19% VAT + handling into Germany — use mainly for ideas.</p></div>
     </div>
@@ -510,7 +606,7 @@
   <footer>
     <b>Trek 970 → City Build</b> · a Blue Lug–style field manual<br>
     Built as a static page. Prices &amp; sizes are planning estimates — measure your own frame before ordering.<br>
-    Illustrations live in the <b>/images</b> folder — swap any <b>&lt;img&gt;</b> for your own photo to make it yours.
+    Every picture is an editable <b>&lt;img&gt;</b> in the <b>/images</b> folder — swap any of them for your own photo to make it yours.
   </footer>
 
 </div>

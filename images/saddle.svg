@@ -1,25 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="Side profile of a leather saddle">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="A Brooks Cambium C17 all-weather saddle">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#f7f6f0"/>
-      <stop offset="1" stop-color="#eae8dc"/>
+      <stop offset="0" stop-color="#f7f6f0"/><stop offset="1" stop-color="#eae8dc"/>
+    </linearGradient>
+    <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4f6f8"/><stop offset="0.35" stop-color="#c3ccd2"/>
+      <stop offset="0.55" stop-color="#8b969d"/><stop offset="0.75" stop-color="#c3ccd2"/>
+      <stop offset="1" stop-color="#e7ecef"/>
     </linearGradient>
   </defs>
-  <rect width="480" height="360" fill="url(#bg)"/>
-  <rect x="14" y="14" width="452" height="332" fill="none" stroke="#c9c6b8" stroke-width="1.5" stroke-dasharray="2 6" rx="10"/>
-  <text x="30" y="42" font-family="'Space Mono', ui-monospace, monospace" font-size="12" letter-spacing="2" fill="#9aa0a2">04 · SADDLE</text>
-  <g fill="none" stroke="#181a1c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-
-    <path d="M70 170 C140 140 330 138 400 175 C420 186 405 205 360 205 C300 205 240 190 150 205 C95 214 60 190 70 170 Z"
-          fill="#bd812b" fill-opacity="0.25" stroke="#bd812b" stroke-width="5"/>
-    <circle cx="95" cy="188" r="4" fill="#181a1c" stroke="none"/>
-    <circle cx="392" cy="182" r="4" fill="#181a1c" stroke="none"/>
-    <circle cx="360" cy="200" r="3.5" fill="#181a1c" stroke="none"/>
-    <circle cx="150" cy="202" r="3.5" fill="#181a1c" stroke="none"/>
-    <line x1="120" y1="205" x2="150" y2="270" stroke="#9aa0a2" stroke-width="4"/>
-    <line x1="360" y1="204" x2="150" y2="270" stroke="#9aa0a2" stroke-width="4"/>
-    <line x1="150" y1="270" x2="150" y2="300" stroke="#181a1c" stroke-width="7"/>
-
-  </g>
-  <text x="30" y="334" font-family="'Space Mono', ui-monospace, monospace" font-size="15" fill="#181a1c">Brooks B17 — honey leather</text>
-</svg>
+  <rect width="480" height="360" fill="url(#bg)"/><rect x="12" y="12" width="456" height="336" fill="none" stroke="#c9c6b8" stroke-width="1.4" stroke-dasharray="2 6" rx="10"/><text x="26" y="36" font-family="Space Mono, ui-monospace, monospace" font-size="11" letter-spacing="1.5" fill="#9aa0a2">04 · SADDLE</text><text x="26" y="338" font-family="Space Mono, ui-monospace, monospace" font-size="13" fill="#181a1c">Brooks Cambium C17 — all-weather</text><g fill="none" stroke="#181a1c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M70 175 C120 151 370 149 410 169 C428 181 404 199 350 197 C200 193 100 205 70 175 Z" fill="#5f6b73" fill-opacity="0.9" stroke="#181a1c" stroke-width="4"/><line x1="126" y1="159" x2="126" y2="191" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2"/><line x1="182" y1="159" x2="182" y2="191" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2"/><line x1="238" y1="159" x2="238" y2="191" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2"/><line x1="294" y1="159" x2="294" y2="191" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2"/><line x1="350" y1="159" x2="350" y2="191" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2"/><circle cx="86" cy="175" r="5" fill="#9aa0a2" stroke="#fff" stroke-width="1.5"/><line x1="83" y1="175" x2="89" y2="175" stroke="#fff" stroke-width="1.6"/><circle cx="396" cy="173" r="5" fill="#9aa0a2" stroke="#fff" stroke-width="1.5"/><line x1="393" y1="173" x2="399" y2="173" stroke="#fff" stroke-width="1.6"/><line x1="170" y1="193" x2="240" y2="255" stroke="url(#chrome)" stroke-width="4"/><line x1="310" y1="191" x2="240" y2="255" stroke="url(#chrome)" stroke-width="4"/><line x1="240" y1="255" x2="240" y2="287" stroke="#181a1c" stroke-width="7"/></g></svg>
