@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="A front rack and fender over a wheel">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7f6f0"/>
+      <stop offset="1" stop-color="#eae8dc"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="360" fill="url(#bg)"/>
+  <rect x="14" y="14" width="452" height="332" fill="none" stroke="#c9c6b8" stroke-width="1.5" stroke-dasharray="2 6" rx="10"/>
+  <text x="30" y="42" font-family="'Space Mono', ui-monospace, monospace" font-size="12" letter-spacing="2" fill="#9aa0a2">10 · RACK &amp; FENDERS</text>
+  <g fill="none" stroke="#181a1c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+
+    <circle cx="240" cy="250" r="86" stroke="#181a1c" stroke-width="7"/><circle cx="240" cy="250" r="72" stroke="#9aa0a2" stroke-width="2"/><circle cx="240" cy="250" r="4" fill="#9aa0a2" stroke="none"/><line x1="240" y1="250" x2="311.0" y2="250.0" stroke="#9aa0a2" stroke-width="1.4"/><line x1="240" y1="250" x2="301.5" y2="285.5" stroke="#9aa0a2" stroke-width="1.4"/><line x1="240" y1="250" x2="275.5" y2="311.5" stroke="#9aa0a2" stroke-width="1.4"/><line x1="240" y1="250" x2="240.0" y2="321.0" stroke="#9aa0a2" stroke-width="1.4"/><line x1="240" y1="250" x2="204.5" y2="311.5" stroke="#9aa0a2" stroke-width="1.4"/><line x1="240" y1="250" x2="178.5" y2="285.5" stroke="#9aa0a2" stroke-width="1.4"/><line x1="240" y1="250" x2="169.0" y2="250.0" stroke="#9aa0a2" stroke-width="1.4"/><line x1="240" y1="250" x2="178.5" y2="214.5" stroke="#9aa0a2" stroke-width="1.4"/><line x1="240" y1="250" x2="204.5" y2="188.5" stroke="#9aa0a2" stroke-width="1.4"/><line x1="240" y1="250" x2="240.0" y2="179.0" stroke="#9aa0a2" stroke-width="1.4"/><line x1="240" y1="250" x2="275.5" y2="188.5" stroke="#9aa0a2" stroke-width="1.4"/><line x1="240" y1="250" x2="301.5" y2="214.5" stroke="#9aa0a2" stroke-width="1.4"/>
+    <path d="M120 205 A140 140 0 0 1 360 205" stroke="#9aa0a2" stroke-width="5"/>
+    <rect x="150" y="90" width="180" height="10" rx="4" fill="none" stroke="#1f43df" stroke-width="6"/>
+    <line x1="165" y1="100" x2="185" y2="185" stroke="#1f43df" stroke-width="5"/>
+    <line x1="315" y1="100" x2="295" y2="185" stroke="#1f43df" stroke-width="5"/>
+    <line x1="240" y1="100" x2="240" y2="150" stroke="#1f43df" stroke-width="5"/>
+    <line x1="150" y1="95" x2="120" y2="95 " stroke="#181a1c" stroke-width="4"/>
+    <rect x="170" y="60" width="140" height="34" rx="5" fill="#bd812b" fill-opacity="0.2" stroke="#bd812b" stroke-width="4"/>
+
+  </g>
+  <text x="30" y="334" font-family="'Space Mono', ui-monospace, monospace" font-size="15" fill="#181a1c">Nitto front rack + Honjo fenders</text>
+</svg>
